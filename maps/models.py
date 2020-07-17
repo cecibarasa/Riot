@@ -1,9 +1,10 @@
 from django.db import models
 from PIL import Image
 from django.contrib.auth.models import User
+from django.contrib.gis.db import models
 # Create your models here.
 
-class Riot(model.Models):
+class Riot(models.Model):
     user=models.ForeignKey(User, on_delete=models.CASCADE)
     name=models.CharField(max_length=100)
     description=models.TextField()
@@ -14,6 +15,19 @@ class Riot(model.Models):
 
     def __str__(self):
         return self.name
+
+    def save_riot(self):
+        self.save()
+    
+    @classmethod    
+    def get_riot(cls, id):
+        riot=Riot.objects.get(pk=id)
+        return riot
+    
+    @classmethod   
+    def delete_riot(cls,delete_id):
+        Riot.objects.filter(pk=delete_id).delete()
+
 
 class Profile(models.Model):
     user=models.OneToOneField(User, on_delete=models.CASCADE)

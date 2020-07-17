@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis'
 ]
 
 MIDDLEWARE = [
@@ -76,10 +77,12 @@ WSGI_APPLICATION = 'riot.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'riot',
         'USER': 'jefferson',
-    'PASSWORD': 'james_22',
+        'PASSWORD': 'james_22',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 

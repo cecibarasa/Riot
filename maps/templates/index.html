@@ -1,7 +1,7 @@
 {%extends 'all-maps/base.html'%}{% load leaflet_tags %} {% block content %} {{block.super}} {{date|date:"l d-F Y "}}
 
 <head>
-    ... {% leaflet_js %} {% leaflet_css %}
+{% leaflet_js %} {% leaflet_css %}
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <!-- <style>
         .leaflet-container {
@@ -14,7 +14,7 @@
     {% leaflet_map "yourmap" callback='ourfunction' %}
     <script>
         function ourfunction(map, options) {
-            var ourdata = '{% url "data "}';
+            var ourdata = '{% url "data" %}';
             $.getJSON(ourdata, function(data) {
                 L.geoJson(data).addTo(map);
             })

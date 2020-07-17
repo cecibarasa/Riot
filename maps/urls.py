@@ -8,7 +8,9 @@ from .models import Maps
 from djgeojson.views import GeoJSONLayerView
 
 
+
+
 urlpatterns=[
     url(r'^$', TemplateView.as_view(template_name="index.html"), name="home"),
-    url(r'^data/$', GeoJSONLayerView.as_view(model=Maps, properties=("name","location","address","city")), name="data")
+    url(r'^data/$', GeoJSONLayerView.as_view(model=Maps, properties=("name","shop","address","city","street")), name="data")
 ]

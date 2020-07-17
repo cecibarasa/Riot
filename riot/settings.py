@@ -81,9 +81,9 @@ WSGI_APPLICATION = 'riot.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'gis',
-        'USER': 'nabalayo',
-        'PASSWORD': 'karitie',
+        'NAME': 'riot',
+        'USER': 'briankiiru',
+        'PASSWORD': 'andela',
         'HOST': 'localhost',
         'PORT': '5432'
     }

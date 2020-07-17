@@ -1,0 +1,2 @@
+Hello {{name}}
+Welcome to Riotcrimeapp where you can report a roit occuring at a specific place.
